@@ -50,24 +50,9 @@ html, body {
   left: 0vw;
 }
 
-@media (min-width: 650px) {
-  .panel {
-    width: 80vw;
-    left: 10vw;
-  }
-}
-
-@media (min-width: 1200px) {
-  .panel {
-    width: 60vw;
-    left: 20vw;
-  }
-}
-
-
 .text-title {
   font-family: "Oxanium", sans-serif;
-  font-size: 10vh; /* 4.5rem; */
+  font-size: 7vh;
   color: #F7F6BB;
 
   position: relative;
@@ -80,7 +65,7 @@ html, body {
 }
 
 .small {
-  font-size: 5vh;
+  font-size: 3.5vh;
   padding: 0vh 0vw;
   letter-spacing: 0.4rem;
   filter: none;
@@ -245,7 +230,6 @@ button:active {
   align-items: center;
   justify-content: center;
   justify-items: center;
-
 }
 
 .level-text {
@@ -338,4 +322,27 @@ border-radius: 34px;
 
 .slider.round:before {
 border-radius: 50%;
+}
+
+@media (min-width: 650px) {
+  .panel {
+    width: 80vw;
+    left: 10vw;
+  }
+
+  .text-title {
+    font-size: 10vh;
+  }
+
+  .small {
+    font-size: 5vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .panel {
+    width: 60vw;
+    left: 20vw;
+  }
+  
 }
