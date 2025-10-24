@@ -15,7 +15,7 @@ const regex = /^[a-zA-Z0-9]$/;
 
 // ---- Button lamp colour on click animation ----
 
-$(".indicator").on("mousedown touchstart", function(e) {
+$(".indicator").on("pointerdown", function(e) {
   e.stopImmediatePropagation();
   $(this).addClass("click");
 
@@ -26,7 +26,7 @@ $(".indicator").on("mousedown touchstart", function(e) {
   }
 });
 
-$(document).on("mouseup touchend", function(e) {
+$(document).on("pointerup", function(e) {
   e.stopImmediatePropagation();
   $(".indicator").removeClass("click");
 
@@ -89,7 +89,7 @@ $(".btn-reset").on("click", function() {
 
 //      From mouse Start and run.
 //      This event is also invoked from the keyup event. (line 31)
-$(".indicator").on("mouseup", function() {
+$(".indicator").on("pointerup", function() {
   if (!gameInProgress){
     startGame();
   } else {
@@ -324,6 +324,7 @@ function updateScore() {
     $(".h-score-value").text($(".c-score-value").text());
   }
 }
+
 
 
 
