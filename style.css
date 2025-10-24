@@ -157,6 +157,7 @@ html, body {
   font-family: "Oxanium", sans-serif;
   font-size: 300%;
   color: RGBA(255,255,255,0.3);
+  user-select: none;
 
 }
 
@@ -355,3 +356,4 @@ border-radius: 50%;
     left: 20vw;
   }
 }
+
