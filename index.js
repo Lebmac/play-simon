@@ -15,7 +15,7 @@ const regex = /^[a-zA-Z0-9]$/;
 
 // ---- Button lamp colour on click animation ----
 
-$(".indicator").on("mousedown", function() {
+$(".indicator").on("mousedown touchstart", function() {
   $(this).addClass("click");
 
   // -- Play audio
@@ -25,7 +25,7 @@ $(".indicator").on("mousedown", function() {
   }
 });
 
-$(document).on("mouseup", function() {
+$(document).on("mouseup touchend", function() {
 
   $(".indicator").removeClass("click");
 
@@ -64,21 +64,6 @@ $(document).on("keyup", function(e) {
   $(".indicator").filter("." + e.key).trigger("mouseup");
 });
 
-$(".indicator").on("touchstart", function() {
-  $(this).addClass("click");
-
-  // -- Play audio
-  if (gameInProgress) {
-    var colour = $(this).attr("class").split(/\s+/)[1];
-    playSound(colour);
-  }
-});
-
-$(document).on("touchend", function() {
-
-  $(".indicator").removeClass("click");
-
-});
 
 // ---- Other inputs
 
@@ -338,5 +323,6 @@ function updateScore() {
     $(".h-score-value").text($(".c-score-value").text());
   }
 }
+
 
 
