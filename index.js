@@ -15,7 +15,8 @@ const regex = /^[a-zA-Z0-9]$/;
 
 // ---- Button lamp colour on click animation ----
 
-$(".indicator").on("mousedown touchstart", function() {
+$(".indicator").on("mousedown touchstart", function(e) {
+  e.stopPropagation();
   $(this).addClass("click");
 
   // -- Play audio
@@ -25,8 +26,8 @@ $(".indicator").on("mousedown touchstart", function() {
   }
 });
 
-$(document).on("mouseup touchend", function() {
-
+$(document).on("mouseup touchend", function(e) {
+  e.stopPropagation();
   $(".indicator").removeClass("click");
 
 });
@@ -323,6 +324,7 @@ function updateScore() {
     $(".h-score-value").text($(".c-score-value").text());
   }
 }
+
 
 
 
