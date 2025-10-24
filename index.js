@@ -64,6 +64,22 @@ $(document).on("keyup", function(e) {
   $(".indicator").filter("." + e.key).trigger("mouseup");
 });
 
+$(".indicator").on("touchstart", function() {
+  $(this).addClass("click");
+
+  // -- Play audio
+  if (gameInProgress) {
+    var colour = $(this).attr("class").split(/\s+/)[1];
+    playSound(colour);
+  }
+});
+
+$(document).on("touchend", function() {
+
+  $(".indicator").removeClass("click");
+
+});
+
 // ---- Other inputs
 
 $(".btn-restart").on("click", function() {
@@ -322,4 +338,5 @@ function updateScore() {
     $(".h-score-value").text($(".c-score-value").text());
   }
 }
+
 
