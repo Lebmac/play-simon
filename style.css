@@ -142,6 +142,7 @@ html, body {
   font-family: "Oxanium", sans-serif;
   font-size: 300%;
   color: RGBA(255,255,255,0.3);
+  user-select: none;
 
 }
 
@@ -324,10 +325,6 @@ border-radius: 34px;
 border-radius: 50%;
 }
 
-.no-select {
-  user-select: none;
-}
-
 @media (min-width: 650px) {
   .panel {
     width: 80vw;
@@ -349,3 +346,4 @@ border-radius: 50%;
     left: 20vw;
   }
 }
+
