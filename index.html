@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Simon!</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <link rel="icon" href="./assets/images/icon.svg" />
+</head>
+<body class="gradient-background">
+
+  <p class="counter text-title on-top">#</p>
+  <p class="game-over text-title on-top">Game Over</p>
+
+  <div class="panel">
+    <h1 class="text-title">Play Simon!</h1>
+    <h2 class="text-title small">Press a key to start</h2>
+    
+    <div class="box-narrow">
+      <label class="switch">
+        <input id="sound-on" type="checkbox" checked="true">
+        <span class="slider round"></span>
+      </label>
+      <p class="level-text">Sound Off - On</p>
+    </div>
+
+    <div class="shadow-container">
+      <div class="game-container">
+        <div class="indicator red q">Q</div>
+        <div class="indicator green w">W</div>
+        <div class="indicator yellow a">A</div>
+        <div class="indicator blue s">S</div>
+      </div>
+    </div>
+
+    <div class="stats-container">   
+      <div class="box"> 
+        <button class="btn btn-restart">Start Over</button>
+        <button class="btn btn-reset">Reset Score</button>
+      </div>
+
+      <div class="box">
+        <p class="level-text">Your Score: <span class="c-score-value">0</span></p>
+        <p class="level-text">High Score: <span class="h-score-value">0</span></p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="sub-text">© 2025 Campbell Jamieson</div>
+    </footer>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
