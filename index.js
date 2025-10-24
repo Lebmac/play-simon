@@ -15,8 +15,7 @@ const regex = /^[a-zA-Z0-9]$/;
 
 // ---- Button lamp colour on click animation ----
 
-$(".indicator").on("pointerdown", function(e) {
-  e.stopImmediatePropagation();
+$(".indicator").on("pointerdown", function() {
   $(this).addClass("click");
 
   // -- Play audio
@@ -26,16 +25,13 @@ $(".indicator").on("pointerdown", function(e) {
   }
 });
 
-$(document).on("pointerup", function(e) {
-  e.stopImmediatePropagation();
+$(document).on("pointerup", function() {
   $(".indicator").removeClass("click");
-
 });
 
 $(document).on("keydown", function(e) {
   // -- sanitise space bar which can
   //    cause an error on filter function
-  
   if (!regex.test(e.key)) { return; } 
 
   // -- Add click class for display and audio purposes only
@@ -47,7 +43,6 @@ $(document).on("keydown", function(e) {
     playSound(colour);
   }
 });
-
 
 // ---- Key up triggers mouse up on the indicator corresponding to
 //      the given key. (line 58)
@@ -62,7 +57,7 @@ $(document).on("keyup", function(e) {
 
   // -- trigger mouse up event on the specific indicator
   //    which runs all the logic we want.
-  $(".indicator").filter("." + e.key).trigger("mouseup");
+  $(".indicator").filter("." + e.key).trigger("pointereup");
 });
 
 
@@ -324,6 +319,7 @@ function updateScore() {
     $(".h-score-value").text($(".c-score-value").text());
   }
 }
+
 
 
 
