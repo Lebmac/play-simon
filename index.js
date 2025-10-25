@@ -326,12 +326,13 @@ function updateScore() {
 
 // ---- Retrieve high score ----
 if (scriptFirstScan) {
-  parseInt($(".h-score-value").text(parseInt($.cookie('highscore')) || 0));
+  $(".h-score-value").text($.cookie('highscore') || 0);
 }
 
 
 // keep at bottom of script.
 scriptFirstScan = false;
+
 
 
 
