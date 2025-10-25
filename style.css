@@ -221,7 +221,7 @@ button:active {
 .stats-container {
   position: relative;
   width: 100%;
-  padding: 2vh 0vw 4vh 0vw;
+  padding: 2vh 0vw 6vh 0vw;
 
   display: flex;
   flex-wrap: wrap;
@@ -348,6 +348,10 @@ border-radius: 50%;
     width: 80vw;
     left: 10vw;
   }
+  
+  .stats-container {
+    padding-bottom: 4vh;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -356,4 +360,5 @@ border-radius: 50%;
     left: 20vw;
   }
 }
+
 
