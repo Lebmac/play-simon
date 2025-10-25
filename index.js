@@ -74,7 +74,7 @@ $(".btn-restart").on("click", function() {
 $(".btn-reset").on("click", function() {
   // -- set high score value to 0
   $(".h-score-value").text("0");
-
+  $.cookie('highscore', parseInt(0), { expires: 30, path: '/' });
 });
 
 // ---- Game start ----
@@ -319,7 +319,7 @@ function updateScore() {
 
     $(".h-score-value").text($(".c-score-value").text());
 
-    $.cookie('highscore', parseInt($(".h-score-value").text(), { expires: 30, path: '/' }));
+    $.cookie('highscore', parseInt($(".h-score-value").text()), { expires: 30, path: '/' });
   }
 }
 
@@ -331,6 +331,7 @@ if (scriptFirstScan) {
 
 // keep at bottom of script.
 scriptFirstScan = false;
+
 
 
 
