@@ -103,7 +103,6 @@ function startGame() {
     setTimeout(() => {
       initialiseGame();
       incrementSequence();
-      updateScore();
     }, 100);  
   }
 }
@@ -135,9 +134,8 @@ function progressGame(obj) {
     //  Then add a new colour to the sequence
     //  Read out the sequence to the player
     setTimeout(() => {
-
-      incrementSequence();
       updateScore();
+      incrementSequence();
       displaySequence();
 
     }, sequenceHoldTime);
@@ -315,10 +313,12 @@ setInterval(() => {
 function updateScore() {
   $(".c-score-value").text(gameSequence.length);
 
-  if($(".h-score-value").text() < $(".c-score-value").text()) {
+  if(parseInt($(".h-score-value").text()) < 
+     parseInt($(".c-score-value").text())) {
     $(".h-score-value").text($(".c-score-value").text());
   }
 }
+
 
 
 
