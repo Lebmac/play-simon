@@ -9,6 +9,7 @@ var indicatorCycleTime = 100;
 var cycle = 0;
 var gameInProgress = false;
 var soundOn = true;
+var scriptFirstScan = true;
 
 const regex = /^[a-zA-Z0-9]$/;
 
@@ -315,9 +316,22 @@ function updateScore() {
 
   if(parseInt($(".h-score-value").text()) < 
      parseInt($(".c-score-value").text())) {
+
     $(".h-score-value").text($(".c-score-value").text());
+
+    $.cookie('highscore', parseInt($(".h-score-value").text(), { expires: 30, path: '/' }));
   }
 }
+
+// ---- Retrieve high score ----
+if (scriptFirstScan) {
+  parseInt($(".h-score-value").text(parseInt($.cookie('highscore')) || 0));
+}
+
+
+// keep at bottom of script.
+scriptFirstScan = false;
+
 
 
 
