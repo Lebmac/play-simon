@@ -102,6 +102,7 @@ function startGame() {
     gameInProgress = true;
     
     setTimeout(() => {
+      updateScore()
       initialiseGame();
       incrementSequence();
     }, 100);  
@@ -331,6 +332,7 @@ if (scriptFirstScan) {
 
 // keep at bottom of script.
 scriptFirstScan = false;
+
 
 
 
