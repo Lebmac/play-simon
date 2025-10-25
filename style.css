@@ -221,7 +221,7 @@ button:active {
 .stats-container {
   position: relative;
   width: 100%;
-  padding: 2vh 0vw 6vh 0vw;
+  padding: 2vh 0vw 6.5vh 0vw;
 
   display: flex;
   flex-wrap: wrap;
@@ -360,5 +360,6 @@ border-radius: 50%;
     left: 20vw;
   }
 }
+
 
 
